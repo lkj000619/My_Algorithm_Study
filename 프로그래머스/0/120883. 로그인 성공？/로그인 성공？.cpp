@@ -1,0 +1,25 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+string solution(vector<string> id_pw, vector<vector<string>> db) {
+   
+    vector<int> id;
+    for(int i = 0; i < db.size(); i++){
+        if(id_pw[0] == db[i][0]){
+            id.push_back(i);
+        }
+    }
+    
+    if(id.empty()) return "fail";
+    
+    for(int i = 0; i < id.size(); i++){
+        if(id_pw[1] == db[id[i]][1]){
+            return "login";
+        }
+    }
+    
+    
+    return "wrong pw";
+}
