@@ -28,10 +28,8 @@ vector<int> solution(vector<int> fees, vector<string> records) {
     
     string n;
     int t;
-    if(in_time.size() > 0){
-        for(auto [n, t] : in_time){
-            total_time[n] += 23*60+59-t;
-        }
+    for(auto [n, t] : in_time){
+        total_time[n] += 23*60+59-t;
     }
     
     for(auto [n,t] : total_time){
